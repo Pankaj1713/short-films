@@ -49,10 +49,10 @@ const ResetPassword = () => {
                   type={showPassword ? "text" : "password"}
                   name="newPassword"
                   placeholder="New Password"
-                  className={`w-full px-4 py-2 bg-bgGray text-paragraphColor rounded-md border focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2 bg-bgGray text-paragraphColor rounded-md border focus:outline-none focus:ring-2  placeholder-paragraphColor ${
                     errors.newPassword && touched.newPassword
                       ? "border-red-500"
-                      : "border-gray-600"
+                      : "border-borderColor"
                   }`}
                 />
                 <button
@@ -61,9 +61,9 @@ const ResetPassword = () => {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <IoEyeOffOutline />
+                    <IoEyeOffOutline className="text-borderColor" />
                   ) : (
-                    <MdOutlineRemoveRedEye />
+                    <MdOutlineRemoveRedEye className="text-borderColor" />
                   )}
                 </button>
                 <ErrorMessage
@@ -78,10 +78,10 @@ const ResetPassword = () => {
                   type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   placeholder="Confirm Password"
-                  className={`w-full px-4 py-2 bg-bgGray text-paragraphColor rounded-md border focus:outline-none focus:ring-2 ${
+                  className={`w-full px-4 py-2 bg-bgGray text-paragraphColor rounded-md border focus:outline-none focus:ring-2 placeholder-paragraphColor ${
                     errors.confirmPassword && touched.confirmPassword
                       ? "border-red-500"
-                      : "border-gray-600"
+                      : "border-borderColor"
                   }`}
                 />
                 <button
@@ -90,9 +90,9 @@ const ResetPassword = () => {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                   {showConfirmPassword ? (
-                    <IoEyeOffOutline />
+                    <IoEyeOffOutline className="text-borderColo " />
                   ) : (
-                    <MdOutlineRemoveRedEye />
+                    <MdOutlineRemoveRedEye className="text-borderColor" />
                   )}
                 </button>
                 <ErrorMessage

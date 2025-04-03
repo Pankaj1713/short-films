@@ -65,7 +65,7 @@ const Otp = () => {
         ${
           errors.otp && touched.otp
             ? "border-red-500 focus:ring-red-500"
-            : "border-[#272626] focus:ring-orange-500"
+            : "border-borderColor focus:ring-orange-500"
         }
         mx-2 caret-orange-500`}
                     />

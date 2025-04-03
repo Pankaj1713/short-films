@@ -33,7 +33,7 @@ const ForgotPassword = () => {
           Forgot Password
         </h2>
 
-        <div className="text-paragraphColor text-center">
+        <div className="text-paragraphColor text-center mb-4">
           Enter your registered email id to reset your password
         </div>
 
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
         >
           {({ isSubmitting, errors, touched }) => (
             <Form>
-              <div className="mt-1">
+              <div className="mt-1 mb-2">
                 <Field
                   type="email"
                   name="email"
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
                   className={`w-full px-4 py-2 bg-bgGray text-paragraphColor rounded-md border focus:outline-none focus:ring-2  ${
                     errors.email && touched.email
                       ? "border-red-500"
-                      : "border-gray-600"
+                      : "border-borderColor"
                   }`}
                 />
                 <div className="h-5 mt-1">
