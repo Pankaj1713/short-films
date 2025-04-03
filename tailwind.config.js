@@ -9,6 +9,7 @@ module.exports = withMT({
         secondary: "#000000",
         paragraphColor: "#B3B3B3",
         bgGray: "#1A1A1A",
+        borderColor: "#333333",
       },
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
