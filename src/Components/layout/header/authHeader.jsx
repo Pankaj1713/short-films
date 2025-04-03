@@ -1,20 +1,18 @@
-import React, { useState, useEffect, use } from "react";
+import React, { useState, useEffect } from "react";
 import { IMAGES } from "../../constants/assets";
 import Button from "../../common/button";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../../router/routes";
 
-const PublicHeader = () => {
+const AuthHeader = ({
+  buttonText = "Login/Sign Up",
+  buttonRoute = "/login",
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,12 +31,12 @@ const PublicHeader = () => {
         <img src={IMAGES.LOGO} alt="Logo" />
       </div>
       <div>
-        <Button variant="primary" onClick={() => navigate(ROUTES.LOGIN)}>
-          Login/Sign Up
+        <Button variant="primary" onClick={() => navigate(buttonRoute)}>
+          {buttonText}
         </Button>
       </div>
     </div>
   );
 };
 
-export default PublicHeader;
+export default AuthHeader;

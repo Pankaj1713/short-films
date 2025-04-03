@@ -5,4 +5,5 @@ export const IMAGES = {
   BANNER_IMAGE2: "/images/heroSectionImage2.jpg",
   BANNER_IMAGE3: "/images/heroSectionImage3.jpg",
   BANNER_IMAGE4: "/images/heroSectionImage4.jpg",
+  AUTH_IMAGE: "/images/authImage.png",
 };
