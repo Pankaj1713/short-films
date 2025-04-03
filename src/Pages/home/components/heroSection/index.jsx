@@ -143,7 +143,7 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 0.5 }}
         className="absolute inset-0 flex flex-col justify-center text-white px-10 z-10"
       >
-        <h1 className="md:text-[56px] text-4xl font-bold">
+        <h1 className="md:text-[56px] text-3xl font-bold font-bebas">
           {currentMovie.title}
         </h1>
         <div className="flex items-center gap-4 mt-2 text-sm">

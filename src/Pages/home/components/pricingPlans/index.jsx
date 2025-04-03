@@ -38,7 +38,7 @@ const PricingPlans = () => {
   return (
     <section className="bg-black text-white py-12 px-6 md:px-16">
       <motion.h2
-        className="text-2xl md:text-3xl font-bold text-center uppercase"
+        className="text-3xl md:text-3xl font-bold text-center uppercase font-bebas"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -50,7 +50,7 @@ const PricingPlans = () => {
       <div className="flex justify-center mt-6">
         <button
           onClick={() => setActiveTab("monthly")}
-          className={`px-10 py-2 rounded-l-lg ${
+          className={`px-10 md:px-20 py-2 rounded-l-lg ${
             activeTab === "monthly"
               ? "bg-primary text-white"
               : "bg-bgGray text-white"
@@ -60,7 +60,7 @@ const PricingPlans = () => {
         </button>
         <button
           onClick={() => setActiveTab("annual")}
-          className={`px-10 py-2 rounded-r-lg ${
+          className={`px-10 md:px-20 py-2 rounded-r-lg ${
             activeTab === "annual"
               ? "bg-primary text-white"
               : "bg-bgGray text-white"
@@ -92,7 +92,11 @@ const PricingPlans = () => {
 
               <ul className="mt-4 space-y-2 text-sm">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex justify-between px-4 py-1">
+                  <li
+                    key={i}
+                    className="flex justify-between px-4 py-1 text-base
+                  "
+                  >
                     <span>Quisque Posuere</span>
                     {feature ? (
                       <FaCheck className="text-green-500" />

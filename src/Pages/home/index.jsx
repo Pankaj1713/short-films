@@ -4,6 +4,7 @@ import TrendingSection from "./components/trendingSection";
 import LatestHits from "./components/latestHits";
 import ReasonsToJoin from "./components/reasonsToJoin";
 import PricingPlans from "./components/pricingPlans";
+import ApplyFilm from "./components/applyFilm";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <LatestHits />
       <ReasonsToJoin />
       <PricingPlans />
+      <ApplyFilm />
     </div>
   );
 };

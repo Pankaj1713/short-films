@@ -82,7 +82,7 @@ const TrendingSection = () => {
 
   return (
     <div className="px-10 py-10 md:py-20 text-white">
-      <h2 className="text-2xl md:text-5xl mb-6">Trending Now</h2>
+      <h2 className="text-3xl md:text-5xl mb-6 font-bebas">Trending Now</h2>
       <div className="relative">
         <div
           ref={carouselRef}

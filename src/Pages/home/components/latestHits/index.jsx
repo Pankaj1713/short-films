@@ -7,7 +7,7 @@ const LatestHits = () => {
       {/* Left Section */}
       <div className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left">
         <div className="text-white">
-          <div className="text-3xl md:text-5xl uppercase">
+          <div className="text-3xl md:text-5xl uppercase font-bebas">
             Catch the Latest Short Film Hits
           </div>
           <div className="text-base md:text-xl text-paragraphColor leading-relaxed mt-2">

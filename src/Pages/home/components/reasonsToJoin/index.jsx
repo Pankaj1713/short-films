@@ -48,7 +48,7 @@ const ReasonsToJoin = () => {
     >
       <motion.h2
         variants={itemVariants}
-        className="text-2xl md:text-3xl font-bold text-center uppercase"
+        className="text-3xl md:text-5xl font-bold text-center uppercase font-bebas"
       >
         More Reasons to Join the Short Film Show
       </motion.h2>

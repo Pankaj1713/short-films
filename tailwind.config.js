@@ -10,6 +10,9 @@ module.exports = withMT({
         paragraphColor: "#B3B3B3",
         bgGray: "#1A1A1A",
       },
+      fontFamily: {
+        bebas: ["Bebas Neue", "sans-serif"],
+      },
     },
   },
   plugins: [],
