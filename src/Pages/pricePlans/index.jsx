@@ -1,10 +1,10 @@
 import React from "react";
-import PricingPlans from "../home/components/pricingPlans";
+import Plans from "./plans";
 
 const PricePlans = () => {
   return (
     <div>
-      <PricingPlans title="Choose your plan" />
+      <Plans title="Choose your plan" />
     </div>
   );
 };

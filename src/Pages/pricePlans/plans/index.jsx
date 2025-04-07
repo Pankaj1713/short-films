@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { FaCheck } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import Button from "../../../../Components/common/button";
+import { useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import Button from "../../../Components/common/button";
+import { IMAGES } from "../../../Components/constants/assets";
 
 const plans = [
   {
@@ -58,16 +66,41 @@ const plans = [
   },
 ];
 
-const PricingPlans = ({ title }) => {
+const Plans = ({ title }) => {
+  const [openLogoutModal, setOpenLogoutModal] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleModal = () => setOpenLogoutModal((prev) => !prev);
+
   const [activeTab, setActiveTab] = useState("monthly");
 
   const handlePlanSelect = (planName) => {
     console.log("Selected plan:", planName);
   };
 
+  const handleLogoutConfirm = () => {
+    toggleModal();
+    navigate(ROUTES.REGISTER);
+  };
+
+  const handleButtonClick = () => {
+    toggleModal();
+  };
+
   return (
     <>
-      <section className="bg-black text-white py-12 px-6 md:px-16">
+      <div className="bg-secondary flex justify-between items-center px-4 py-2 fixed top-0 left-0 w-full z-50 ">
+        <div>
+          <img src={IMAGES.LOGO} alt="Logo" />
+        </div>
+        <div>
+          <Button variant="secondary" onClick={handleButtonClick}>
+            Log Out
+          </Button>
+        </div>
+      </div>
+
+      <section className="bg-black text-white mt-20 py-12 px-6 md:px-16">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-center uppercase font-bebas"
           initial={{ opacity: 0, y: 50 }}
@@ -142,19 +175,36 @@ const PricingPlans = ({ title }) => {
                   </ul>
                 </div>
 
-                {/* <Button
+                <Button
                   variant="secondary"
                   onClick={() => handlePlanSelect(plan.name)}
                 >
                   {plan.buttonText}
-                </Button> */}
+                </Button>
               </motion.div>
             );
           })}
         </div>
+        <Dialog open={openLogoutModal} handler={toggleModal}>
+          <DialogHeader>Confirm Logout</DialogHeader>
+          <DialogBody divider>Are you sure you want to log out?</DialogBody>
+          <DialogFooter>
+            <Button
+              variant="secondary"
+              color="gray"
+              onClick={toggleModal}
+              className="mr-2"
+            >
+              No
+            </Button>
+            <Button variant="primary" color="red" onClick={handleLogoutConfirm}>
+              Yes
+            </Button>
+          </DialogFooter>
+        </Dialog>
       </section>
     </>
   );
 };
 
-export default PricingPlans;
+export default Plans;

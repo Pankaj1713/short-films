@@ -194,7 +194,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/50 pointer-events-none"></div>
 
       {/* Navigation Buttons */}
-      <div className="absolute inset-x-0 bottom-10 flex justify-between items-center px-10 text-white z-50">
+      <div className="absolute inset-x-0 bottom-10 flex justify-between items-center px-10 text-white ">
         <button
           className="p-3 bg-white rounded-full text-secondary cursor-pointer hover:scale-110 transition duration-300 shadow-lg"
           onClick={handlePrev}
