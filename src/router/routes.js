@@ -5,4 +5,5 @@ export const ROUTES = {
   FORGOT_PASSWORD: "/forgot-password",
   OTP: "/otp",
   RESET_PASSWORD: "/reset-password",
+  PRICE_PLANS: "/plans",
 };

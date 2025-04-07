@@ -8,6 +8,7 @@ import Signup from "../Pages/auth/signup";
 import ForgotPassword from "../Pages/auth/forgotPassword";
 import Otp from "../Pages/auth/otp";
 import ResetPassword from "../Pages/auth/resetPassword";
+import PricePlans from "../Pages/pricePlans";
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
           <Route path={ROUTES.FORGOT_PASSWORD} element={<ForgotPassword />} />
           <Route path={ROUTES.OTP} element={<Otp />} />
           <Route path={ROUTES.RESET_PASSWORD} element={<ResetPassword />} />
+          <Route path={ROUTES.PRICE_PLANS} element={<PricePlans />} />
         </Routes>
       </BrowserRouter>
     </div>

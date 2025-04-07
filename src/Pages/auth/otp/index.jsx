@@ -30,7 +30,7 @@ const Otp = () => {
     >
       <div className="absolute inset-0 bg-black/70"></div>
 
-      <AuthHeader buttonText="Sign Up" buttonRoute={ROUTES.REGISTER} />
+      <AuthHeader />
 
       <div className="relative z-10 bg-bgGray p-8 rounded-3xl shadow-lg w-[400px] text-white">
         <h2 className="text-center text-3xl md:text-5xl font-normal mb-2 uppercase font-bebas">
@@ -57,6 +57,7 @@ const Otp = () => {
                   value={values.otp}
                   onChange={(otp) => setFieldValue("otp", otp)}
                   numInputs={4}
+                  shouldAutoFocus
                   renderInput={(props, index) => (
                     <input
                       {...props}

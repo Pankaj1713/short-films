@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { IMAGES } from "../../constants/assets";
 import Button from "../../common/button";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../router/routes";
 
-const AuthHeader = ({
-  buttonText = "Login/Sign Up",
-  buttonRoute = "/login",
-}) => {
+const AuthHeader = ({ buttonText, buttonRoute, variant }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
@@ -27,14 +25,23 @@ const AuthHeader = ({
         isScrolled ? "bg-black/90 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <div>
-        <img src={IMAGES.LOGO} alt="Logo" />
+      <div className="cursor-pointer">
+        <img
+          src={IMAGES.LOGO}
+          alt="Logo"
+          onClick={() => navigate(ROUTES.HOME)}
+        />
       </div>
-      <div>
-        <Button variant="primary" onClick={() => navigate(buttonRoute)}>
-          {buttonText}
-        </Button>
-      </div>
+      {buttonText && buttonRoute && (
+        <div>
+          <Button
+            variant={variant === "secondary" ? "secondary" : "primary"}
+            onClick={() => navigate(buttonRoute)}
+          >
+            {buttonText || ""}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

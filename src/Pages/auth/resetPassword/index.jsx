@@ -3,11 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import AuthHeader from "../../../Components/layout/header/authHeader";
 import { ROUTES } from "../../../router/routes";
-import { Link } from "react-router-dom";
 import { IMAGES } from "../../../Components/constants/assets";
 import Button from "../../../Components/common/button";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object({
   newPassword: Yup.string()
@@ -21,6 +21,15 @@ const validationSchema = Yup.object({
 const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (values) => {
+    console.log("Reset Password Data:", values);
+
+    navigate(ROUTES.LOGIN);
+  };
+
   return (
     <div
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
@@ -28,7 +37,7 @@ const ResetPassword = () => {
     >
       <div className="absolute inset-0 bg-black/70"></div>
 
-      <AuthHeader buttonText="Sign Up" buttonRoute={ROUTES.REGISTER} />
+      <AuthHeader />
 
       <div className="relative z-10 bg-bgGray p-8 rounded-3xl shadow-lg w-[400px] text-white">
         <h2 className="text-center text-3xl md:text-5xl font-normal mb-2 uppercase font-bebas">
@@ -38,9 +47,7 @@ const ResetPassword = () => {
         <Formik
           initialValues={{ newPassword: "", confirmPassword: "" }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
-            console.log("Reset Password Data:", values);
-          }}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting, errors, touched }) => (
             <Form>
@@ -66,11 +73,13 @@ const ResetPassword = () => {
                     <MdOutlineRemoveRedEye className="text-borderColor" />
                   )}
                 </button>
-                <ErrorMessage
-                  name="newPassword"
-                  component="div"
-                  className="text-red-500 pt-2 text-sm"
-                />
+                <div className="h-3">
+                  <ErrorMessage
+                    name="newPassword"
+                    component="div"
+                    className="text-red-500 pt-2 text-sm"
+                  />
+                </div>
               </div>
 
               <div className="mb-4 relative">
@@ -95,11 +104,13 @@ const ResetPassword = () => {
                     <MdOutlineRemoveRedEye className="text-borderColor" />
                   )}
                 </button>
-                <ErrorMessage
-                  name="confirmPassword"
-                  component="div"
-                  className="text-red-500 pt-2 text-sm"
-                />
+                <div className="h-3">
+                  <ErrorMessage
+                    name="confirmPassword"
+                    component="div"
+                    className="text-red-500 pt-2 text-sm"
+                  />
+                </div>
               </div>
 
               <Button className="w-full" type="submit" disabled={isSubmitting}>

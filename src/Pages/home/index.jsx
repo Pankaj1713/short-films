@@ -13,7 +13,7 @@ const Home = () => {
       <TrendingSection />
       <LatestHits />
       <ReasonsToJoin />
-      <PricingPlans />
+      <PricingPlans title="Affordable Plans" />
       <ApplyFilm />
     </div>
   );

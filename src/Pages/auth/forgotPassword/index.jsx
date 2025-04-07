@@ -26,7 +26,7 @@ const ForgotPassword = () => {
     >
       <div className="absolute inset-0 bg-black/70"></div>
 
-      <AuthHeader buttonText="Sign Up" buttonRoute={ROUTES.REGISTER} />
+      <AuthHeader buttonText="Login" buttonRoute={ROUTES.LOGIN} />
 
       <div className="relative z-10 bg-bgGray p-8 rounded-3xl shadow-lg w-[400px] text-white">
         <h2 className="text-center text-3xl md:text-5xl font-normal mb-2 uppercase font-bebas">

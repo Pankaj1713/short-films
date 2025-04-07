@@ -30,7 +30,11 @@ const PublicHeader = () => {
       }`}
     >
       <div>
-        <img src={IMAGES.LOGO} alt="Logo" />
+        <img
+          src={IMAGES.LOGO}
+          alt="Logo"
+          onClick={() => navigate(ROUTES.HOME)}
+        />
       </div>
       <div>
         <Button variant="primary" onClick={() => navigate(ROUTES.LOGIN)}>
