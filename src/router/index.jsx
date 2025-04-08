@@ -9,6 +9,8 @@ import ForgotPassword from "../Pages/auth/forgotPassword";
 import Otp from "../Pages/auth/otp";
 import ResetPassword from "../Pages/auth/resetPassword";
 import PricePlans from "../Pages/pricePlans";
+import PrivateLayout from "./authLayout/privateLayout";
+import PrivateHome from "../Pages/privateHome";
 
 const Router = () => {
   return (
@@ -25,6 +27,10 @@ const Router = () => {
           <Route path={ROUTES.OTP} element={<Otp />} />
           <Route path={ROUTES.RESET_PASSWORD} element={<ResetPassword />} />
           <Route path={ROUTES.PRICE_PLANS} element={<PricePlans />} />
+
+          <Route path={ROUTES.HOME} element={<PrivateLayout />}>
+            <Route path={ROUTES.PRIVATE_HOME} element={<PrivateHome />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

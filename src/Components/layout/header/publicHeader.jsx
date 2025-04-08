@@ -34,6 +34,7 @@ const PublicHeader = () => {
           src={IMAGES.LOGO}
           alt="Logo"
           onClick={() => navigate(ROUTES.HOME)}
+          className="cursor-pointer"
         />
       </div>
       <div>

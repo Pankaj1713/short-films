@@ -11,6 +11,7 @@ import {
 } from "@material-tailwind/react";
 import Button from "../../../Components/common/button";
 import { IMAGES } from "../../../Components/constants/assets";
+import { ROUTES } from "../../../router/routes";
 
 const plans = [
   {
@@ -76,11 +77,12 @@ const Plans = ({ title }) => {
 
   const handlePlanSelect = (planName) => {
     console.log("Selected plan:", planName);
+    navigate(ROUTES.PRIVATE_HOME);
   };
 
   const handleLogoutConfirm = () => {
     toggleModal();
-    navigate(ROUTES.REGISTER);
+    navigate(ROUTES.LOGIN);
   };
 
   const handleButtonClick = () => {
