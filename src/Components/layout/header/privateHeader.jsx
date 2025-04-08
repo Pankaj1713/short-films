@@ -23,7 +23,7 @@ const PrivateHeader = () => {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 px-4 py-4 text-white transition-all duration-300 ${
-        isScrolled || menuOpen ? "bg-black/90 shadow-md" : "bg-transparent"
+        isScrolled || menuOpen ? "bg-secondary shadow-md" : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-between">
@@ -32,7 +32,7 @@ const PrivateHeader = () => {
           src={IMAGES.LOGO}
           alt="Logo"
           onClick={() => navigate(ROUTES.HOME)}
-          //   className="h-10 cursor-pointer"
+          className="h-10 md:h-20 cursor-pointer"
         />
 
         {/* Desktop Nav */}
@@ -79,21 +79,17 @@ const PrivateHeader = () => {
             <div className="flex flex-col space-y-4 py-4 bg-secondary rounded-md px-4 w-full">
               <Link
                 to={ROUTES.PRIVATE_HOME}
-                className="hover:text-yellow-400"
+                className="hover:text-primary"
                 onClick={toggleMenu}
               >
                 Short Movies
               </Link>
-              <Link
-                to="#"
-                className="hover:text-yellow-400"
-                onClick={toggleMenu}
-              >
+              <Link to="#" className="hover:text-primary" onClick={toggleMenu}>
                 Categories
               </Link>
               <div className="flex items-center space-x-4">
-                <FaSearch className="cursor-pointer hover:text-yellow-400" />
-                <FaBell className="cursor-pointer hover:text-yellow-400" />
+                <FaSearch className="cursor-pointer hover:text-primary" />
+                <FaBell className="cursor-pointer hover:text-primary" />
                 <img
                   src="/images/profileImage.png"
                   alt="User"

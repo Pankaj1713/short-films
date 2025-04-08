@@ -22,7 +22,9 @@ const AuthHeader = ({ buttonText, buttonRoute, variant }) => {
   return (
     <div
       className={`fixed top-0 left-0 w-full flex justify-between items-center px-4 py-2 transition-all duration-300 z-50 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled
+          ? "bg-secondary backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="cursor-pointer">
@@ -30,6 +32,7 @@ const AuthHeader = ({ buttonText, buttonRoute, variant }) => {
           src={IMAGES.LOGO}
           alt="Logo"
           onClick={() => navigate(ROUTES.HOME)}
+          className="h-10 md:h-20"
         />
       </div>
       {buttonText && buttonRoute && (
