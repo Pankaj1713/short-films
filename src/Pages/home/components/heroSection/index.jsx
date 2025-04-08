@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IMAGES } from "../../../../Components/constants/assets";
@@ -113,31 +113,34 @@ const HeroSection = () => {
   };
 
   const currentMovie = movies[currentIndex];
-
   const progress =
     (currentMovie.watchedTime / currentMovie.totalDuration) * 100;
   const remainingTime = currentMovie.totalDuration - currentMovie.watchedTime;
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <motion.div
-        key={currentIndex}
-        custom={direction}
-        initial="incoming"
-        animate="active"
-        exit="exit"
-        variants={sliderVariants}
-        transition={sliderTransition}
-        className="absolute inset-0"
-      >
-        <img
-          src={currentMovie.image}
-          alt="Movie Banner"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" />
-      </motion.div>
+      {/* AnimatePresence wrapper */}
+      <AnimatePresence mode="wait" custom={direction}>
+        <motion.div
+          key={currentIndex}
+          custom={direction}
+          initial="incoming"
+          animate="active"
+          exit="exit"
+          variants={sliderVariants}
+          transition={sliderTransition}
+          className="absolute inset-0"
+        >
+          <img
+            src={currentMovie.image}
+            alt="Movie Banner"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" />
+        </motion.div>
+      </AnimatePresence>
 
+      {/* Overlay Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -188,26 +191,26 @@ const HeroSection = () => {
           whileTap={{ scale: 0.9 }}
           className="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg w-1/2 flex items-center justify-center gap-2"
         >
-          <FaCirclePlay />
-          Watch
+          <FaCirclePlay /> Watch
         </motion.button>
       </motion.div>
 
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 pointer-events-none"></div>
 
       {/* Navigation Buttons */}
-      <div className="absolute inset-x-0 bottom-10 flex justify-between items-center px-10 text-white ">
+      <div className="absolute inset-x-0 bottom-10 flex justify-between items-center px-10 text-white z-20">
         <button
           className="p-3 bg-white rounded-full text-secondary cursor-pointer hover:scale-110 transition duration-300 shadow-lg"
           onClick={handlePrev}
         >
-          <MdKeyboardArrowLeft />
+          <MdKeyboardArrowLeft size={24} />
         </button>
         <button
           className="p-3 bg-white rounded-full text-secondary cursor-pointer hover:scale-110 transition duration-300 shadow-lg"
           onClick={handleNext}
         >
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight size={24} />
         </button>
       </div>
     </div>

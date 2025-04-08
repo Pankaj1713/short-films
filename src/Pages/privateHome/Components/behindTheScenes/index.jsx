@@ -45,10 +45,12 @@ const movies = [
   },
 ];
 
-export default function NewReleases() {
+export default function BehindTheScenes() {
   return (
     <div className="px-4 md:px-12 py-8 bg-black text-white">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6">NEW RELEASES</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        BEHIND THE SCENE CONTENT
+      </h2>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         {movies.map((movie, index) => (
           <motion.div
