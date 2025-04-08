@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IMAGES } from "../../../../Components/constants/assets";
+import { FaCirclePlay } from "react-icons/fa6";
 
 const movies = [
   {
@@ -185,9 +186,10 @@ const HeroSection = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg w-1/2"
+          className="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg w-1/2 flex items-center gap-2"
         >
-          ▶ Watch
+          <FaCirclePlay />
+          Watch
         </motion.button>
       </motion.div>
 
