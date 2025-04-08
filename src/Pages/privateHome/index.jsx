@@ -5,6 +5,7 @@ import NewReleases from "./Components/trendingSection";
 import EditorsChoice from "./Components/editorsChoice";
 import SponsoredFilms from "./Components/sponsoredFilms";
 import BehindTheScenes from "./Components/behindTheScenes";
+import BrowseByGenre from "./Components/browseByGenre";
 
 const PrivateHome = () => {
   return (
@@ -15,6 +16,7 @@ const PrivateHome = () => {
       <EditorsChoice />
       <SponsoredFilms />
       <BehindTheScenes />
+      <BrowseByGenre />
     </div>
   );
 };
