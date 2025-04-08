@@ -37,14 +37,14 @@ const PrivateHeader = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-6 text-white">
-          <Link to={ROUTES.PRIVATE_HOME} className="hover:text-yellow-400">
+          <Link to={ROUTES.PRIVATE_HOME} className="hover:text-primary">
             Short Movies
           </Link>
-          <Link to="#" className="hover:text-yellow-400">
+          <Link to="#" className="hover:text-primary">
             Categories
           </Link>
-          <FaSearch className="cursor-pointer hover:text-yellow-400" />
-          <FaBell className="cursor-pointer hover:text-yellow-400" />
+          <FaSearch className="cursor-pointer hover:text-primary" />
+          <FaBell className="cursor-pointer hover:text-primary" />
           <img
             src="/images/profileImage.png"
             alt="User"
