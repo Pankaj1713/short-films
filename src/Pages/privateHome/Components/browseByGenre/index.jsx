@@ -6,6 +6,7 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const categories = [
   { label: "Category 1", value: "0" },
@@ -44,14 +45,14 @@ const BrowseByGenre = () => {
         <h2 className="text-3xl md:text-5xl font-bold font-bebas">
           BROWSE BY GENRE
         </h2>
-        <a href="#" className="text-primary font-semibold hover:underline">
+        <Link to="#" className="text-primary font-semibold hover:underline">
           Show all
-        </a>
+        </Link>
       </div>
 
       <Tabs value={activeTab}>
         <TabsHeader
-          className="bg-transparent border-b border-gray-700 p-0 rounded-none"
+          className="bg-transparent border-b border-gray-700 p-0 overflow-x-auto no-scrollbar rounded-none"
           indicatorProps={{
             className:
               "bg-transparent border-b-2 border-primary rounded-none shadow-none",

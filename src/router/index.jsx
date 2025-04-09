@@ -11,6 +11,7 @@ import ResetPassword from "../Pages/auth/resetPassword";
 import PricePlans from "../Pages/pricePlans";
 import PrivateLayout from "./authLayout/privateLayout";
 import PrivateHome from "../Pages/privateHome";
+import BrowseMovies from "../Pages/browseMovies";
 
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
 
           <Route path={ROUTES.HOME} element={<PrivateLayout />}>
             <Route path={ROUTES.PRIVATE_HOME} element={<PrivateHome />} />
+            <Route path={ROUTES.BROWSE_MOVIES} element={<BrowseMovies />} />
           </Route>
         </Routes>
       </BrowserRouter>

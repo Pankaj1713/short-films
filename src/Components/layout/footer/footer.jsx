@@ -4,7 +4,7 @@ import { IMAGES } from "../../constants/assets";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className=" px-20 border-t border-borderColor pt-6 rounded-t-3xl">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
           {/* Logo Section */}
           <div className="mb-6 md:mb-0">
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-borderColor mt-6 pt-4 text-center text-white text-sm">
+        <div className="border-t border-borderColor mt-6 pt-6 text-center text-white text-sm">
           Copyright 2025. All Rights Reserved
         </div>
       </div>

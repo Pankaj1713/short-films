@@ -32,7 +32,7 @@ const AuthHeader = ({ buttonText, buttonRoute, variant }) => {
           src={IMAGES.LOGO}
           alt="Logo"
           onClick={() => navigate(ROUTES.HOME)}
-          className="h-10 md:h-20"
+          className="h-10 md:h-16"
         />
       </div>
       {buttonText && buttonRoute && (

@@ -4,6 +4,8 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IMAGES } from "../../../../Components/constants/assets";
 import { FaCirclePlay } from "react-icons/fa6";
+import { ROUTES } from "../../../../router/routes";
+import { useNavigate } from "react-router-dom";
 
 const movies = [
   {
@@ -98,6 +100,8 @@ const PrivateHeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const navigete = useNavigate();
+
   const handleNext = () => {
     setDirection(1);
     setCurrentIndex((prevIndex) =>
@@ -190,6 +194,7 @@ const PrivateHeroSection = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg w-1/2 flex items-center justify-center gap-2"
+          onClick={()=> navigete(ROUTES.BROWSE_MOVIES)}
         >
           <FaCirclePlay /> Watch
         </motion.button>

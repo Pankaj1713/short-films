@@ -8,4 +8,5 @@ export const ROUTES = {
   PRICE_PLANS: "/plans",
   DASHBOARD: "/dashboard",
   PRIVATE_HOME: "/home",
+  BROWSE_MOVIES: "/browse",
 };

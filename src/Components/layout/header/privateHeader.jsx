@@ -22,7 +22,7 @@ const PrivateHeader = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 px-4 py-4 text-white transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 px-4 py-3 text-white transition-all duration-300 ${
         isScrolled || menuOpen ? "bg-secondary shadow-md" : "bg-transparent"
       }`}
     >
@@ -32,7 +32,7 @@ const PrivateHeader = () => {
           src={IMAGES.LOGO}
           alt="Logo"
           onClick={() => navigate(ROUTES.HOME)}
-          className="h-10 md:h-20 cursor-pointer"
+          className="h-10 md:h-16 cursor-pointer"
         />
 
         {/* Desktop Nav */}
